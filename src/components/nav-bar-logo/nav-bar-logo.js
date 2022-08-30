@@ -1,12 +1,19 @@
 import './nav-bar-logo.sass';
 
 function NavBarLogo(props) {
-    const { text, onClick } = props;
+    const { text, color, onClick } = props;
+    
+    let img;
+    if(color === 'white'){
+        img = (<img src={require(`../../assets/img/logo.svg`).default} alt="" />);
+    } else {
+        img = (<img src={require(`../../assets/img/logo-black.svg`).default} alt="" />);
+    }
 
     return (
         <div className="nav-bar-logo">
-            <img className='logo' src={require('../../assets/img/logo.svg').default} alt="" />
-            <span className='text'>{text}</span>
+            {img}
+            <span className={`text-${color}`}>{text}</span>
         </div>
     );
 }
