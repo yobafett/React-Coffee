@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import nextId from "react-id-generator";
 import MainPage from '../main-page/main-page';
+import NavBar from '../nav-bar/nav-bar';
 
 import './app.sass';
 
@@ -10,18 +11,27 @@ class App extends Component {
         this.state = {
             navLogo: {
                 title: 'Coffee house',
-                onClick: ''
+                onClick: () => {
+                    console.log('logo-click');
+                    this.changePage('main');
+                }
             },
             navItems: [
                 {
-                    title: 'Our coffee',
-                    onClick: '',
                     id: nextId(),
+                    title: 'Our coffee',
+                    onClick: () => {
+                        console.log('Our coffee');
+                        this.changePage('coffee');
+                    }
                 },
                 {
-                    title: 'For your pleasure',
-                    onClick: '',
                     id: nextId(),
+                    title: 'For your pleasure',
+                    onClick: () => {
+                        console.log('For your pleasure');
+                        this.changePage('pleasure');
+                    }
                 },
             ],
             aboutUsText: `Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
@@ -58,19 +68,51 @@ class App extends Component {
                     id: nextId(),
                 },
             ],
+            currentPage: 'main'
         }
     }
 
+    changePage = (page) => {
+        this.setState(() => ({
+            currentPage: page
+        }))
+    }
+
     render() {
-        const { navLogo, navItems, aboutUsText, bestItems } = this.state;
+        const { navLogo, navItems, aboutUsText, bestItems, currentPage } = this.state;
+
+        let page;
+        switch (currentPage) {
+            case 'coffee':
+                page = (
+                    <div className="">
+                        <p>Coffee</p>
+                        <NavBar navLogo={navLogo} navItems={navItems} />
+                    </div>
+                );
+                break;
+            case 'pleasure':
+                page = (
+                    <div className="">
+                        <p>Pleasure</p>
+                        <NavBar navLogo={navLogo} navItems={navItems} />
+                    </div>
+                );
+                break;
+            default:
+                page = (
+                    <MainPage
+                        navLogo={navLogo}
+                        navItems={navItems}
+                        aboutUsText={aboutUsText}
+                        bestItems={bestItems} />
+                );
+                break;
+        }
 
         return (
             <div className='app'>
-                <MainPage
-                    navLogo={navLogo}
-                    navItems={navItems}
-                    aboutUsText={aboutUsText}
-                    bestItems={bestItems} />
+                {page}
             </div>
         );
     }
