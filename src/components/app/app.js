@@ -4,7 +4,8 @@ import nextId from "react-id-generator";
 import HeroBlock from '../hero-block/hero-block';
 import AboutUs from '../about-us/about-us';
 import OurBestBlock from '../our-best-block/our-best-block';
-import NavBar from '../nav-bar/nav-bar';
+import Footer from '../footer/footer';
+
 
 import './app.sass';
 
@@ -69,11 +70,11 @@ class App extends Component {
         const { navLogo, navItems, aboutUsText, bestItems } = this.state;
 
         return (
-            <div>
+            <div className='app'>
                 <HeroBlock navLogo={navLogo} navItems={navItems} />
                 <AboutUs aboutUsText={aboutUsText} />
                 <OurBestBlock bestItems={bestItems} />
-                <NavBar navLogo={navLogo} navItems={navItems} color={'black'} />
+                <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
             </div>
         );
     }
