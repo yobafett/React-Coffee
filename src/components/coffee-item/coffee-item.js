@@ -3,11 +3,16 @@ import './coffee-item.sass';
 function CoffeeItem(props) {
     const { img, title, price, isBest, country, onClick } = props;
 
+    let classes = 'coffee-item';
+    if (!isBest) {
+        classes += ' shadow';
+    }
+
     return (
-        <div className="coffee-item" >
+        <div className={classes} >
             <img src={img} alt="" />
             <span className='title'>{title}</span>
-            {!isBest ? `<span className='country'>{country}</span>` : ``}
+            {!isBest ? (<span className='country'>{country}</span>) : ''}
             <span className='price'>{price}$</span>
         </div>
     );
