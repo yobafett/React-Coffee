@@ -9,6 +9,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            currentPage: 'coffee',
             navLogo: {
                 title: 'Coffee house',
                 onClick: () => {
@@ -73,8 +74,61 @@ class App extends Component {
                     country: 'Salamenia',
                     onClick: '',
                 },
+                {
+                    id: nextId(),
+                    title: 'AROMISTICO Coffee 1 kg',
+                    img: require(`../../assets/img/aromistico.jpg`),
+                    price: '6.99',
+                    isBest: false,
+                    country: 'Keniya',
+                    onClick: '',
+                },
+                {
+                    id: nextId(),
+                    title: 'AROMISTICO Coffee 1 kg',
+                    img: require(`../../assets/img/aromistico.jpg`),
+                    price: '6.99',
+                    isBest: false,
+                    country: 'Brazil',
+                    onClick: '',
+                },
+                {
+                    id: nextId(),
+                    title: 'AROMISTICO Coffee 1 kg',
+                    img: require(`../../assets/img/aromistico.jpg`),
+                    price: '6.99',
+                    isBest: false,
+                    country: 'Columbia',
+                    onClick: '',
+                },
+                {
+                    id: nextId(),
+                    title: 'AROMISTICO Coffee 1 kg',
+                    img: require(`../../assets/img/aromistico.jpg`),
+                    price: '6.99',
+                    isBest: false,
+                    country: 'Brazil',
+                    onClick: '',
+                },
+                {
+                    id: nextId(),
+                    title: 'AROMISTICO Coffee 1 kg',
+                    img: require(`../../assets/img/aromistico.jpg`),
+                    price: '6.99',
+                    isBest: false,
+                    country: 'Brazil',
+                    onClick: '',
+                },
+                {
+                    id: nextId(),
+                    title: 'AROMISTICO Coffee 1 kg',
+                    img: require(`../../assets/img/aromistico.jpg`),
+                    price: '6.99',
+                    isBest: false,
+                    country: 'Brazil',
+                    onClick: '',
+                },
             ],
-            currentPage: 'coffee'
         }
     }
 
@@ -92,9 +146,10 @@ class App extends Component {
             case 'coffee':
                 page = (
                     <div className="">
-                    <CoffeePage
-                        navLogo={navLogo}
-                        navItems={navItems} />
+                        <CoffeePage
+                            navLogo={navLogo}
+                            navItems={navItems}
+                            coffeeItems={coffeeItems.filter(item => !item.isBest)} />
                     </div>
                 );
                 break;
@@ -111,7 +166,7 @@ class App extends Component {
                         navLogo={navLogo}
                         navItems={navItems}
                         aboutUsText={aboutUsText}
-                        coffeeItems={coffeeItems} />
+                        coffeeItems={coffeeItems.filter(item => item.isBest)} />
                 );
                 break;
         }
