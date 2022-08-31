@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import nextId from "react-id-generator";
 import MainPage from '../main-page/main-page';
-import NavBar from '../nav-bar/nav-bar';
+import CoffeePage from '../coffee-page/coffee-page';
 
 import './app.sass';
 
@@ -68,7 +68,7 @@ class App extends Component {
                     id: nextId(),
                 },
             ],
-            currentPage: 'main'
+            currentPage: 'coffee'
         }
     }
 
@@ -86,8 +86,9 @@ class App extends Component {
             case 'coffee':
                 page = (
                     <div className="">
-                        <p>Coffee</p>
-                        <NavBar navLogo={navLogo} navItems={navItems} />
+                    <CoffeePage
+                        navLogo={navLogo}
+                        navItems={navItems} />
                     </div>
                 );
                 break;
@@ -95,7 +96,6 @@ class App extends Component {
                 page = (
                     <div className="">
                         <p>Pleasure</p>
-                        <NavBar navLogo={navLogo} navItems={navItems} />
                     </div>
                 );
                 break;
