@@ -6,12 +6,12 @@ import Footer from '../footer/footer';
 import './main-page.sass';
 
 function MainPage(props) {
-    const { navLogo, navItems, aboutUsText, bestItems } = props;
+    const { navLogo, navItems, aboutUsText, coffeeItems } = props;
     return (
         <div className='main-page'>
             <HeroBlock navLogo={navLogo} navItems={navItems} />
             <AboutUs aboutUsText={aboutUsText} />
-            <OurBestBlock bestItems={bestItems} />
+            <OurBestBlock coffeeItems={coffeeItems} />
             <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
         </div>
     );

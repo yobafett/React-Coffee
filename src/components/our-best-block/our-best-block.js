@@ -1,18 +1,20 @@
 import H2 from '../h2/h2';
-import OurBestItem from '../our-best-item/our-best-item';
+import CoffeeItem from '../coffee-item/coffee-item';
 
 import './our-best-block.sass';
 
 function OurBestBlock(props) {
-    const { bestItems } = props;
+    const { coffeeItems } = props;
 
-    const items = bestItems.map((item) => {
+    const items = coffeeItems.map((item) => {
         return (
-            <OurBestItem
+            <CoffeeItem
                 title={item.title}
                 img={item.img}
                 price={item.price}
                 onClick={item.onClick}
+                isBest={item.isBest}
+                country={item.country}
                 key={item.id} />
         );
     })
@@ -20,7 +22,7 @@ function OurBestBlock(props) {
     return (
         <div className="our-best-block">
             <H2 text={'Our best'} color={'#000'} shadow={false} />
-            <div className='best-items'>
+            <div className='coffee-items'>
                 {items}
             </div>
         </div>
