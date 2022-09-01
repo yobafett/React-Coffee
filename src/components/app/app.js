@@ -131,6 +131,21 @@ class App extends Component {
                 },
             ],
             searchString: '',
+            filters: [
+                {
+                    id: nextId(),
+                    name: 'Keniya',
+                },
+                {
+                    id: nextId(),
+                    name: 'Brazil',
+                },
+                {
+                    id: nextId(),
+                    name: 'Columbia',
+                },
+            ],
+            currentFilter: ''
         }
     }
 
@@ -142,12 +157,18 @@ class App extends Component {
 
     onSearchInputChange = (e) => {
         this.setState(() => ({
-            searchString: e.target.value.toLocaleLowerCase()
+            searchString: e.target.value.toLowerCase()
+        }))
+    }
+
+    onFilterChange = (filter) => {
+        this.setState(({ currentFilter }) => ({
+            currentFilter: currentFilter === filter.toLowerCase() ? '' : filter.toLowerCase()
         }))
     }
 
     render() {
-        const { navLogo, navItems, aboutUsText, coffeeItems, currentPage } = this.state;
+        const { navLogo, navItems, aboutUsText, coffeeItems, currentPage, filters, currentFilter } = this.state;
 
         let page;
         switch (currentPage) {
@@ -158,9 +179,13 @@ class App extends Component {
                             navLogo={navLogo}
                             navItems={navItems}
                             onSearchChange={this.onSearchInputChange}
+                            onFilterChange={this.onFilterChange}
+                            filters={filters}
+                            currentFilter={currentFilter}
                             coffeeItems={coffeeItems.filter(item => {
-                                const isSearchMatch = item.title.toLocaleLowerCase().indexOf(this.state.searchString) > -1;
-                                return !item.isBest && isSearchMatch;
+                                const isSearchMatch = item.title.toLowerCase().indexOf(this.state.searchString) > -1;
+                                const isFilterMatch = item.country.toLowerCase().indexOf(this.state.currentFilter) > -1;
+                                return !item.isBest && isSearchMatch && isFilterMatch;
                             })} />
                     </div>
                 );
