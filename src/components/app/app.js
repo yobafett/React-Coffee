@@ -3,6 +3,7 @@ import nextId from "react-id-generator";
 
 import MainPage from '../main-page/main-page';
 import CoffeePage from '../coffee-page/coffee-page';
+import GoodsPage from '../goods-page/goods-page';
 
 import './app.sass';
 
@@ -14,7 +15,6 @@ class App extends Component {
             navLogo: {
                 title: 'Coffee house',
                 onClick: () => {
-                    console.log('logo-click');
                     this.changePage('main');
                 }
             },
@@ -23,7 +23,6 @@ class App extends Component {
                     id: nextId(),
                     title: 'Our coffee',
                     onClick: () => {
-                        console.log('Our coffee');
                         this.changePage('coffee');
                     }
                 },
@@ -31,7 +30,6 @@ class App extends Component {
                     id: nextId(),
                     title: 'For your pleasure',
                     onClick: () => {
-                        console.log('For your pleasure');
                         this.changePage('pleasure');
                     }
                 },
@@ -193,7 +191,18 @@ class App extends Component {
             case 'pleasure':
                 page = (
                     <div className="">
-                        <p>Pleasure</p>
+                        <GoodsPage
+                            navLogo={navLogo}
+                            navItems={navItems}
+                            onSearchChange={this.onSearchInputChange}
+                            onFilterChange={this.onFilterChange}
+                            filters={filters}
+                            currentFilter={currentFilter}
+                            coffeeItems={coffeeItems.filter(item => {
+                                const isSearchMatch = item.title.toLowerCase().indexOf(this.state.searchString) > -1;
+                                const isFilterMatch = item.country.toLowerCase().indexOf(this.state.currentFilter) > -1;
+                                return !item.isBest && isSearchMatch && isFilterMatch;
+                            })} />
                     </div>
                 );
                 break;
