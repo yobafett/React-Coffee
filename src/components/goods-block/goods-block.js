@@ -1,9 +1,10 @@
 import CoffeeItem from '../coffee-item/coffee-item';
+import Search from '../search/search';
 
 import './goods-block.sass';
 
 function GoodsBlock(props) {
-    const { coffeeItems } = props;
+    const { coffeeItems, onSearchChange } = props;
 
     const items = coffeeItems.map((item) => {
         return (
@@ -20,6 +21,12 @@ function GoodsBlock(props) {
 
     return (
         <div className="goods-block">
+            <div>
+                <Search
+                    label='Lookiing for'
+                    placeholder='start typing here...'
+                    onSearchChange={onSearchChange} />
+            </div>
             <div className='coffee-items'>
                 {items}
             </div>

@@ -7,12 +7,12 @@ import Footer from '../footer/footer';
 import './coffee-page.sass';
 
 function CoffeePage(props) {
-    const { navLogo, navItems, coffeeItems } = props;
+    const { navLogo, navItems, coffeeItems, onSearchChange } = props;
     return (
         <div className='coffee-page'>
             <HeaderBlock navLogo={navLogo} navItems={navItems} />
             <AboutBeans />
-            <GoodsBlock coffeeItems={coffeeItems} />
+            <GoodsBlock coffeeItems={coffeeItems} onSearchChange={onSearchChange} />
             <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
         </div>
     );

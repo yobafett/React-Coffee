@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import nextId from "react-id-generator";
+
 import MainPage from '../main-page/main-page';
 import CoffeePage from '../coffee-page/coffee-page';
 
@@ -129,12 +130,19 @@ class App extends Component {
                     onClick: '',
                 },
             ],
+            searchString: '',
         }
     }
 
     changePage = (page) => {
         this.setState(() => ({
             currentPage: page
+        }))
+    }
+
+    onSearchInputChange = (e) => {
+        this.setState(() => ({
+            searchString: e.target.value.toLocaleLowerCase()
         }))
     }
 
@@ -149,7 +157,11 @@ class App extends Component {
                         <CoffeePage
                             navLogo={navLogo}
                             navItems={navItems}
-                            coffeeItems={coffeeItems.filter(item => !item.isBest)} />
+                            onSearchChange={this.onSearchInputChange}
+                            coffeeItems={coffeeItems.filter(item => {
+                                const isSearchMatch = item.title.toLocaleLowerCase().indexOf(this.state.searchString) > -1;
+                                return !item.isBest && isSearchMatch;
+                            })} />
                     </div>
                 );
                 break;
