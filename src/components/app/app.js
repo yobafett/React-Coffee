@@ -183,10 +183,6 @@ class App extends Component {
                         <GoodsPage
                             navLogo={navLogo}
                             navItems={navItems}
-                            onSearchChange={this.onSearchInputChange}
-                            onFilterChange={this.onFilterChange}
-                            filters={filters}
-                            currentFilter={currentFilter}
                             coffeeItems={coffeeItems.filter(item => !item.isBest)} />
                     </div>
                 );
