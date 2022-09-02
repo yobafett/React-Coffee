@@ -20,8 +20,9 @@ function GoodsBlock(props) {
         );
     })
 
-    return (
-        <div className="goods-block">
+    let searchPanel;
+    if (filters) {
+        searchPanel = (
             <div className='search-panel'>
                 <Search
                     label='Lookiing for'
@@ -33,6 +34,12 @@ function GoodsBlock(props) {
                     currentFilter={currentFilter}
                     filters={filters} />
             </div>
+        );
+    };
+
+    return (
+        <div className="goods-block">
+            {searchPanel}
             <div className='coffee-items'>
                 {items}
             </div>

@@ -31,12 +31,7 @@ function GoodsPage(props) {
                 aboutUsTitle={aboutUsTitle}
                 aboutUsText={aboutUsText}
                 aboutImg={aboutImg} />
-            <GoodsBlock
-                coffeeItems={coffeeItems}
-                onSearchChange={onSearchChange}
-                onFilterChange={onFilterChange}
-                currentFilter={currentFilter}
-                filters={filters} />
+            <GoodsBlock coffeeItems={coffeeItems} />
             <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
         </div>
     );
