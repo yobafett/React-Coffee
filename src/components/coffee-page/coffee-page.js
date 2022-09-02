@@ -9,7 +9,20 @@ import HeaderBg from '../../assets/img/coffee-shop-1209863_1920.jpg';
 import './coffee-page.sass';
 
 function CoffeePage(props) {
-    const { navLogo, navItems, coffeeItems, onSearchChange, onFilterChange, filters, currentFilter } = props;
+    const { navLogo, navItems, coffeeItems,
+        onSearchChange, onFilterChange,
+        filters, currentFilter } = props;
+
+    const aboutUsText = `
+    Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
+
+    Afraid at highly months do things on at. Situation recommend objection do intention
+    so questions. 
+    As greatly removed calling pleased improve an. Last ask him cold feel
+    met spot shy want. Children me laughing we prospect answered followed. At it went
+    is song that held help face.`;
+    const aboutImg = require(`../../assets/img/girl-865304_1920.jpg`);
+
     return (
         <div className='coffee-page'>
             <HeaderBlock
@@ -17,7 +30,7 @@ function CoffeePage(props) {
                 navItems={navItems}
                 background={HeaderBg}
                 h1Title='Our Coffee' />
-            <AboutPic />
+            <AboutPic aboutUsText={aboutUsText} aboutImg={aboutImg} />
             <GoodsBlock
                 coffeeItems={coffeeItems}
                 onSearchChange={onSearchChange}
