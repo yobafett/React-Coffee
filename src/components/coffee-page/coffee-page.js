@@ -13,6 +13,7 @@ function CoffeePage(props) {
         onSearchChange, onFilterChange,
         filters, currentFilter } = props;
 
+    const aboutUsTitle = 'About our beans';
     const aboutUsText = `
     Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
 
@@ -30,7 +31,7 @@ function CoffeePage(props) {
                 navItems={navItems}
                 background={HeaderBg}
                 h1Title='Our Coffee' />
-            <AboutPic aboutUsText={aboutUsText} aboutImg={aboutImg} />
+            <AboutPic aboutUsTitle={aboutUsTitle} aboutUsText={aboutUsText} aboutImg={aboutImg} />
             <GoodsBlock
                 coffeeItems={coffeeItems}
                 onSearchChange={onSearchChange}
