@@ -11,7 +11,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentPage: 'pleasure',
+            currentPage: '',
             navLogo: {
                 title: 'Coffee house',
                 onClick: () => {
