@@ -1,6 +1,6 @@
 
 import HeaderBlock from '../header-block/header-block';
-import AboutBeans from '../about-beans/about-beans';
+import AboutPic from '../about-pic/about-pic';
 import GoodsBlock from '../goods-block/goods-block';
 import Footer from '../footer/footer';
 import HeaderBg from '../../assets/img/coffee-2179009_1920.jpg';
@@ -17,7 +17,7 @@ function GoodsPage(props) {
                 navItems={navItems}
                 background={HeaderBg}
                 h1Title='For your pleasure' />
-            <AboutBeans />
+            <AboutPic />
             <GoodsBlock
                 coffeeItems={coffeeItems}
                 onSearchChange={onSearchChange}

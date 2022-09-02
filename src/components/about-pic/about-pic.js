@@ -1,8 +1,8 @@
 import AboutUs from '../about-us/about-us';
 
-import './about-beans.sass';
+import './about-pic.sass';
 
-function AboutBeans(props) {
+function AboutPic(props) {
     const aboutUsText = `
     Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
 
@@ -14,7 +14,7 @@ function AboutBeans(props) {
     const img = require(`../../assets/img/girl-865304_1920.jpg`);
 
     return (
-        <div className="about-beans">
+        <div className="about-pic">
             <div className="wrapper">
                 <img className="about-pic" src={img} alt="" />
                 <AboutUs aboutUsText={aboutUsText} />
@@ -24,4 +24,4 @@ function AboutBeans(props) {
     );
 }
 
-export default AboutBeans;
+export default AboutPic;
