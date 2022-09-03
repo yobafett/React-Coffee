@@ -12,7 +12,7 @@ function HeroBlock(props) {
     ];
     const btnText = 'More';
 
-    const spans = textStrings.map(el => (<span>{el}</span>));
+    const spans = textStrings.map((el, i) => (<span key={i}>{el}</span>));
 
     return (
         <div className="hero-block">
