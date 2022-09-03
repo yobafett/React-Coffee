@@ -4,6 +4,7 @@ import nextId from "react-id-generator";
 import MainPage from '../main-page/main-page';
 import CoffeePage from '../coffee-page/coffee-page';
 import GoodsPage from '../goods-page/goods-page';
+import CoffeeItemPage from '../coffee-item-page/coffee-item-page';
 
 import './app.sass';
 
@@ -11,7 +12,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentPage: '',
+            currentPage: 'item',
             navLogo: {
                 title: 'Coffee house',
                 onClick: () => {
@@ -42,7 +43,10 @@ class App extends Component {
                     price: '10.73',
                     isBest: true,
                     country: 'Ravarai',
-                    onClick: '',
+                    description: `Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua.`,
+                    onClick: this.onItemClick,
                 },
                 {
                     id: nextId(),
@@ -51,7 +55,9 @@ class App extends Component {
                     price: '15.99',
                     isBest: true,
                     country: 'Plodlyvia',
-                    onClick: '',
+                    description: `Ut enim ad minim veniam, quis nostrud exercitation 
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat`,
+                    onClick: this.onItemClick,
                 },
                 {
                     id: nextId(),
@@ -60,7 +66,9 @@ class App extends Component {
                     price: '6.99',
                     isBest: true,
                     country: 'Salamenia',
-                    onClick: '',
+                    description: `Duis aute irure dolor in reprehenderit in voluptate 
+                    velit esse cillum dolore eu fugiat nulla pariatur.`,
+                    onClick: this.onItemClick,
                 },
                 {
                     id: nextId(),
@@ -69,7 +77,9 @@ class App extends Component {
                     price: '6.99',
                     isBest: false,
                     country: 'Keniya',
-                    onClick: '',
+                    description: `Excepteur sint occaecat cupidatat non proident, 
+                    sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+                    onClick: this.onItemClick,
                 },
                 {
                     id: nextId(),
@@ -78,7 +88,11 @@ class App extends Component {
                     price: '6.99',
                     isBest: false,
                     country: 'Brazil',
-                    onClick: '',
+                    description: `Sed ut perspiciatis unde omnis iste natus error 
+                    sit voluptatem accusantium doloremque laudantium, 
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                    et quasi architecto beatae vitae dicta sunt explicabo.`,
+                    onClick: this.onItemClick,
                 },
                 {
                     id: nextId(),
@@ -87,7 +101,10 @@ class App extends Component {
                     price: '6.99',
                     isBest: false,
                     country: 'Columbia',
-                    onClick: '',
+                    description: `Nemo enim ipsam voluptatem quia voluptas 
+                    sit aspernatur aut odit aut fugit, sed quia consequuntur 
+                    magni dolores eos qui ratione voluptatem sequi nesciunt.`,
+                    onClick: this.onItemClick,
                 },
                 {
                     id: nextId(),
@@ -96,7 +113,11 @@ class App extends Component {
                     price: '6.99',
                     isBest: false,
                     country: 'Brazil',
-                    onClick: '',
+                    description: `Neque porro quisquam est, qui dolorem ipsum quia 
+                    dolor sit amet, consectetur, adipisci velit, 
+                    sed quia non numquam eius modi tempora incidunt ut 
+                    labore et dolore magnam aliquam quaerat voluptatem.`,
+                    onClick: this.onItemClick,
                 },
                 {
                     id: nextId(),
@@ -105,7 +126,10 @@ class App extends Component {
                     price: '6.99',
                     isBest: false,
                     country: 'Brazil',
-                    onClick: '',
+                    description: `Ut enim ad minima veniam, 
+                    quis nostrum exercitationem ullam corporis suscipit laboriosam, 
+                    nisi ut aliquid ex ea commodi consequatur?`,
+                    onClick: this.onItemClick,
                 },
                 {
                     id: nextId(),
@@ -114,7 +138,10 @@ class App extends Component {
                     price: '6.99',
                     isBest: false,
                     country: 'Brazil',
-                    onClick: '',
+                    description: `Quis autem vel eum iure reprehenderit 
+                    qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+                    vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?`,
+                    onClick: this.onItemClick,
                 },
             ],
             searchString: '',
@@ -132,7 +159,8 @@ class App extends Component {
                     name: 'Columbia',
                 },
             ],
-            currentFilter: ''
+            currentFilter: '',
+            activeItem: ''
         }
     }
 
@@ -154,11 +182,25 @@ class App extends Component {
         }))
     }
 
+    onItemClick = (itemId) => {
+        this.setState(() => ({
+            activeItem: this.state.coffeeItems.filter(item => item.id === itemId)[0]
+        }));
+        this.changePage('item');
+    }
+
     render() {
-        const { navLogo, navItems, coffeeItems, currentPage, filters, currentFilter } = this.state;
+        const { navLogo, navItems, coffeeItems, currentPage, filters, currentFilter, activeItem } = this.state;
 
         let page;
         switch (currentPage) {
+            case 'item':
+                page = (
+                    <div className="">
+                        <CoffeeItemPage navLogo={navLogo} navItems={navItems} item={activeItem} />
+                    </div>
+                );
+                break;
             case 'coffee':
                 page = (
                     <div className="">

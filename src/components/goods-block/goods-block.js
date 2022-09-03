@@ -10,6 +10,7 @@ function GoodsBlock(props) {
     const items = coffeeItems.map((item) => {
         return (
             <CoffeeItem
+                id={item.id}
                 title={item.title}
                 img={item.img}
                 price={item.price}
