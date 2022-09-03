@@ -10,7 +10,10 @@ function AboutItem(props) {
         <Fragment>
             <span><b>Country: </b>{country}</span>
             <span><b>Description: </b>{description}</span>
-            <span><b>Price: </b>{price}</span>
+            <span>
+                <b>Price: </b>
+                <span className='price'>{price}$</span>
+            </span>
         </Fragment>
     )
 
@@ -20,7 +23,6 @@ function AboutItem(props) {
                 <img className="about-pic" src={img} alt="" />
                 <AboutUs aboutUsTitle={title} aboutUsText={aboutUsText} />
             </div>
-            <div className="simple-separator"></div>
         </div>
     );
 }
