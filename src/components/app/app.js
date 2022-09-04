@@ -225,7 +225,7 @@ class App extends Component {
                         <GoodsPage
                             navLogo={navLogo}
                             navItems={navItems}
-                            coffeeItems={coffeeItems.filter(item => !item.isBest)} />
+                            items={coffeeItems.filter(item => !item.isBest)} />
                     </div>
                 );
                 break;
