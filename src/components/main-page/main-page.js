@@ -6,7 +6,7 @@ import Footer from '../footer/footer';
 import './main-page.sass';
 
 function MainPage(props) {
-    const { navLogo, navItems, coffeeItems } = props;
+    const { navLogo, navItems, items } = props;
 
     const title = 'About Us';
     const content = `Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
@@ -25,7 +25,7 @@ function MainPage(props) {
         <div className='main-page'>
             <HeroBlock navLogo={navLogo} navItems={navItems} />
             <AboutUs title={title} content={content} />
-            <OurBestBlock coffeeItems={coffeeItems} />
+            <OurBestBlock coffeeItems={items} />
             <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
         </div>
     );

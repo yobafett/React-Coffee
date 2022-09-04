@@ -234,7 +234,7 @@ class App extends Component {
                     <MainPage
                         navLogo={navLogo}
                         navItems={navItems}
-                        coffeeItems={coffeeItems.filter(item => item.isBest)} />
+                        items={coffeeItems.filter(item => item.isBest)} />
                 );
                 break;
         }
