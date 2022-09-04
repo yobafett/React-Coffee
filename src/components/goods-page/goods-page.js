@@ -31,7 +31,7 @@ function GoodsPage(props) {
                 title={title}
                 content={content}
                 img={img} />
-            <GoodsBlock coffeeItems={coffeeItems} />
+            <GoodsBlock items={coffeeItems} />
             <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
         </div>
     );

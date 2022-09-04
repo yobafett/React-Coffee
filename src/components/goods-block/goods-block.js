@@ -5,9 +5,9 @@ import Filter from '../filter/filter';
 import './goods-block.sass';
 
 function GoodsBlock(props) {
-    const { coffeeItems, onSearchChange, onFilterChange, filters, currentFilter } = props;
+    const { items , onSearchChange, onFilterChange, filters, currentFilter } = props;
 
-    const items = coffeeItems.map((item) => {
+    const itemElements = items.map((item) => {
         return (
             <CoffeeItem
                 id={item.id}
@@ -42,7 +42,7 @@ function GoodsBlock(props) {
         <div className="goods-block">
             {searchPanel}
             <div className='coffee-items'>
-                {items}
+                {itemElements}
             </div>
         </div>
     );

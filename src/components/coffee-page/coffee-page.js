@@ -31,7 +31,7 @@ function CoffeePage(props) {
                 h1Title='Our Coffee' />
             <AboutPic title={title} content={content} img={img} />
             <GoodsBlock
-                coffeeItems={items}
+                items={items}
                 onSearchChange={onSearchChange}
                 onFilterChange={onFilterChange}
                 currentFilter={currentFilter}
