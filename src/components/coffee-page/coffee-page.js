@@ -13,8 +13,8 @@ function CoffeePage(props) {
         onSearchChange, onFilterChange,
         filters, currentFilter } = props;
 
-    const aboutUsTitle = 'About our beans';
-    const aboutUsText = `
+    const title = 'About our beans';
+    const content = `
     Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
 
     Afraid at highly months do things on at. Situation recommend objection do intention
@@ -22,7 +22,7 @@ function CoffeePage(props) {
     As greatly removed calling pleased improve an. Last ask him cold feel
     met spot shy want. Children me laughing we prospect answered followed. At it went
     is song that held help face.`;
-    const aboutImg = require(`../../assets/img/girl-865304_1920.jpg`);
+    const img = require(`../../assets/img/girl-865304_1920.jpg`);
 
     return (
         <div className='coffee-page'>
@@ -31,7 +31,7 @@ function CoffeePage(props) {
                 navItems={navItems}
                 background={HeaderBg}
                 h1Title='Our Coffee' />
-            <AboutPic aboutUsTitle={aboutUsTitle} aboutUsText={aboutUsText} aboutImg={aboutImg} />
+            <AboutPic title={title} content={content} img={img} />
             <GoodsBlock
                 coffeeItems={coffeeItems}
                 onSearchChange={onSearchChange}
