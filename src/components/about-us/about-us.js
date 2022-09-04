@@ -8,7 +8,7 @@ function AboutUs(props) {
 
     return (
         <div className="about-us">
-            <H2 text={title} color={'#000'} shadow={false} />
+            <H2 content={title} color={'#000'} shadow={false} />
             <Separator color={'black'} />
             <p>{content}</p>
         </div>
