@@ -8,8 +8,8 @@ import './main-page.sass';
 function MainPage(props) {
     const { navLogo, navItems, coffeeItems } = props;
 
-    const aboutUsTitle = 'About Us';
-    const aboutUsText = `Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
+    const title = 'About Us';
+    const content = `Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
             Afraid at highly months do things on at. Situation recommend objection do intention
             so questions. As greatly removed calling pleased improve an. Last ask him cold feel
             met spot shy want. Children me laughing we prospect answered followed. At it went
@@ -24,7 +24,7 @@ function MainPage(props) {
     return (
         <div className='main-page'>
             <HeroBlock navLogo={navLogo} navItems={navItems} />
-            <AboutUs aboutUsTitle={aboutUsTitle} aboutUsText={aboutUsText} />
+            <AboutUs title={title} content={content} />
             <OurBestBlock coffeeItems={coffeeItems} />
             <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
         </div>

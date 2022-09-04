@@ -9,7 +9,7 @@ function AboutPic(props) {
         <div className="about-pic">
             <div className="wrapper">
                 <img className="about-pic" src={img} alt="" />
-                <AboutUs aboutUsTitle={title} aboutUsText={content} />
+                <AboutUs title={title} content={content} />
             </div>
             <div className="simple-separator"></div>
         </div>

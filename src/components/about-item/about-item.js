@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import AboutUs from '../about-us/about-us';
 import AboutPic from '../about-pic/about-pic';
 
 import './about-item.sass';
