@@ -1,12 +1,13 @@
 import { Fragment } from 'react';
 import AboutUs from '../about-us/about-us';
+import AboutPic from '../about-pic/about-pic';
 
 import './about-item.sass';
 
 function AboutItem(props) {
     const { title, country, price, description, img } = props.item;
 
-    const aboutUsText = (
+    const content = (
         <Fragment>
             <span><b>Country: </b>{country}</span>
             <span><b>Description: </b>{description}</span>
@@ -18,11 +19,8 @@ function AboutItem(props) {
     )
 
     return (
-        <div className="about-item">
-            <div className="wrapper">
-                <img className="about-pic" src={img} alt="" />
-                <AboutUs aboutUsTitle={title} aboutUsText={aboutUsText} />
-            </div>
+        <div className="item">
+            <AboutPic title={title} content={content} img={img} />
         </div>
     );
 }
