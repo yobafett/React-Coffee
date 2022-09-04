@@ -1,7 +1,7 @@
 import './nav-bar-logo.sass';
 
 function NavBarLogo(props) {
-    const { text, color, onClick } = props;
+    const { content, color, onClick } = props;
 
     let img;
     if (color === 'white') {
@@ -13,7 +13,7 @@ function NavBarLogo(props) {
     return (
         <div className="nav-bar-logo" onClick={(e) => { onClick(); }}>
             {img}
-            <span className={`text-${color}`}>{text}</span>
+            <span className={`text-${color}`}>{content}</span>
         </div>
     );
 }

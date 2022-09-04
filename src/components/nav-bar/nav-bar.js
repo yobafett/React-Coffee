@@ -9,7 +9,7 @@ function NavBar(props) {
     const items = navItems.map((item) => {
         return (
             <NavBarItem
-                text={item.title}
+                content={item.title}
                 onClick={item.onClick}
                 color={color}
                 key={item.id} />
@@ -19,7 +19,7 @@ function NavBar(props) {
     return (
         <div className="nav-bar">
             <NavBarLogo
-                text={navLogo.title}
+                content={navLogo.title}
                 onClick={navLogo.onClick}
                 color={color} />
             {items}

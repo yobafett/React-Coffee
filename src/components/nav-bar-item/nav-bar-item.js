@@ -1,11 +1,11 @@
 import './nav-bar-item.sass';
 
 function NavBarItem(props) {
-    const { text, color, onClick } = props;
+    const { content, color, onClick } = props;
 
     return (
         <div className="nav-bar-item" onClick={(e) => { onClick(); }}>
-            <span className={`text-${color}`}>{text}</span>
+            <span className={`text-${color}`}>{content}</span>
         </div>
     );
 }
