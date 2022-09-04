@@ -25,7 +25,7 @@ function MainPage(props) {
         <div className='main-page'>
             <HeroBlock navLogo={navLogo} navItems={navItems} />
             <AboutUs title={title} content={content} />
-            <OurBestBlock coffeeItems={items} />
+            <OurBestBlock items={items} />
             <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
         </div>
     );

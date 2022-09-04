@@ -4,9 +4,9 @@ import CoffeeItem from '../coffee-item/coffee-item';
 import './our-best-block.sass';
 
 function OurBestBlock(props) {
-    const { coffeeItems } = props;
+    const { items } = props;
 
-    const items = coffeeItems.map((item) => {
+    const itemElements = items.map((item) => {
         return (
             <CoffeeItem
                 id={item.id}
@@ -24,7 +24,7 @@ function OurBestBlock(props) {
         <div className="our-best-block">
             <H2 content={'Our best'} color={'#000'} shadow={false} />
             <div className='coffee-items'>
-                {items}
+                {itemElements}
             </div>
         </div>
     );
