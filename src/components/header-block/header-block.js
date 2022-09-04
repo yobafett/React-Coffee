@@ -9,7 +9,7 @@ function HeaderBlock(props) {
     return (
         <div className="header-block" style={{ backgroundImage: `url(${background})` }}>
             <NavBar navLogo={navLogo} navItems={navItems} color={'white'} />
-            <H1 text={h1Title} color={'#fff'} shadow={false} />
+            <H1 content={h1Title} color={'#fff'} shadow={false} />
         </div>
     );
 }

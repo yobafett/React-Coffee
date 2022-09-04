@@ -17,7 +17,7 @@ function HeroBlock(props) {
     return (
         <div className="hero-block">
             <NavBar navLogo={props.navLogo} navItems={props.navItems} color={'white'} />
-            <H1 text={h1Title} color={'#fff'} shadow={true} />
+            <H1 content={h1Title} color={'#fff'} shadow={true} />
             <Separator color={'white'} />
             <div className='underH1'>
                 {spans}
