@@ -211,7 +211,7 @@ class App extends Component {
                             onFilterChange={this.onFilterChange}
                             filters={filters}
                             currentFilter={currentFilter}
-                            coffeeItems={coffeeItems.filter(item => {
+                            items={coffeeItems.filter(item => {
                                 const isSearchMatch = item.title.toLowerCase().indexOf(this.state.searchString) > -1;
                                 const isFilterMatch = item.country.toLowerCase().indexOf(this.state.currentFilter) > -1;
                                 return !item.isBest && isSearchMatch && isFilterMatch;

@@ -9,9 +9,7 @@ import HeaderBg from '../../assets/img/coffee-shop-1209863_1920.jpg';
 import './coffee-page.sass';
 
 function CoffeePage(props) {
-    const { navLogo, navItems, coffeeItems,
-        onSearchChange, onFilterChange,
-        filters, currentFilter } = props;
+    const { navLogo, navItems, items, onSearchChange, onFilterChange, filters, currentFilter } = props;
 
     const title = 'About our beans';
     const content = `
@@ -33,7 +31,7 @@ function CoffeePage(props) {
                 h1Title='Our Coffee' />
             <AboutPic title={title} content={content} img={img} />
             <GoodsBlock
-                coffeeItems={coffeeItems}
+                coffeeItems={items}
                 onSearchChange={onSearchChange}
                 onFilterChange={onFilterChange}
                 currentFilter={currentFilter}
