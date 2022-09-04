@@ -2,7 +2,7 @@
 import './search.sass';
 
 function Search(props) {
-    const { label,placeholder, onSearchChange } = props;
+    const { label, placeholder, onSearchChange } = props;
 
     return (
         <div className="search" >
