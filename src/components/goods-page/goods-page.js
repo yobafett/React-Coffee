@@ -8,7 +8,7 @@ import HeaderBg from '../../assets/img/coffee-2179009_1920.jpg';
 import './goods-page.sass';
 
 function GoodsPage(props) {
-    const { navLogo, navItems, items, onSearchChange, onFilterChange, filters, currentFilter } = props;
+    const { navLogo, navItems, items } = props;
 
     const title = 'About our goods';
     const content = `Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
@@ -27,10 +27,7 @@ function GoodsPage(props) {
                 navItems={navItems}
                 background={HeaderBg}
                 h1Title='For your pleasure' />
-            <AboutPic
-                title={title}
-                content={content}
-                img={img} />
+            <AboutPic title={title} content={content} img={img} />
             <GoodsBlock items={items} />
             <Footer navLogo={navLogo} navItems={navItems} color={'black'} />
         </div>
