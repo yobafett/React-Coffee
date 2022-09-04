@@ -22,7 +22,7 @@ function OurBestBlock(props) {
 
     return (
         <div className="our-best-block">
-            <H2 text={'Our best'} color={'#000'} shadow={false} />
+            <H2 content={'Our best'} color={'#000'} shadow={false} />
             <div className='coffee-items'>
                 {items}
             </div>
